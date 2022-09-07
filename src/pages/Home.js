@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Container = styled.div`
   padding: 30px;
@@ -125,9 +126,7 @@ border-radius:0.625rem;
 margin: auto;
 width: 18.75rem;
 position: absolute;
-left: 69%;
-
-
+left: 67%;
 `
 
 const Home = ()=>{
@@ -135,7 +134,7 @@ const Home = ()=>{
         <>      
         <Header/>
         <Container>
-            <ImgCon src="../images/image-product-1.jpg"/>
+            <ImgCon src="../images/image-product-1.jpg" alt="shoe-product"/>
             <Content>
 
                 <Sneaker>Sneaker Company</Sneaker>
@@ -157,7 +156,7 @@ const Home = ()=>{
                     <BtnNumber>0</BtnNumber>
                     <BtnPlus>+</BtnPlus>
                 </BtnCounter>
-                <BtnCart>Add to cart</BtnCart>
+                <BtnCart><ShoppingCartIcon style={{fontSize: '30px'}}/>Add to cart</BtnCart>
             </BtnWraper>
             
         </Container>
