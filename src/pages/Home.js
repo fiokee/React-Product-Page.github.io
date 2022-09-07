@@ -66,18 +66,21 @@ align-self: center;
 `
 const BtnWraper = styled.div`
 display:flex;
+position: relative;
+width: 100%;
 `
 const BtnCounter = styled.div`
-background: #b6bcc8;
+
+   background:#F5F5F5;
     border: none;
     color: #1d2025;
-    font-size: 1.125rem;
-    height: 100%;
     text-align: center;
-    width: 15%;
+    width: 23%;
+    border-radius:0.625rem;
     margin: auto;
-    border-radius: 7%;
-`
+    position: relative;
+    left: 30px;
+   `
 const BtnMinus = styled.span`
 align-items: center;
     color: #ff7d19;
@@ -85,7 +88,6 @@ align-items: center;
     display: inline-flex;
     font-size: 1.5rem;
     font-weight: 700;
-    height: 100%;
     margin: 30px;
     justify-content: center;
     
@@ -93,12 +95,11 @@ align-items: center;
 `
 const BtnNumber = styled.span`
 align-items: center;
-    color: #ff7d19;
+    color: #000;
     cursor: pointer;
     display: inline-flex;
     font-size: 1.5rem;
     font-weight: 700;
-    height: 100%;
     justify-content: center;
 `
 const BtnPlus =styled.span`
@@ -108,22 +109,25 @@ align-items: center;
     display: inline-flex;
     font-size: 1.5rem;
     font-weight: 700;
-    height: 100%;
     margin: 30px;
     
 `
 const BtnCart = styled.button`
 color:white ;
 cursor: pointer;
-display: inline-flex;
 border: none;
 background-color: #ff7d19;
-width: 15%;
+width: 10%;
 text-align: center;
 font-size: 1.5rem;
-margin: 30px;
-padding: 40px;
-border-radius: 5%;
+padding: 20px;
+border-radius:0.625rem;
+margin: auto;
+width: 18.75rem;
+position: absolute;
+left: 69%;
+
+
 `
 
 const Home = ()=>{
