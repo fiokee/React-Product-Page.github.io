@@ -10,7 +10,7 @@ const Container = styled.div`
    justify-content: space-around;
    padding: 0 24px;
    margin: 60px;
-   
+
 `
 const ImgCon = styled.img`
 width: 35%;
@@ -87,12 +87,10 @@ align-items: center;
     color: #ff7d19;
     cursor: pointer;
     display: inline-flex;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin: 30px;
-    justify-content: center;
-    
-    
+    justify-content: center; 
 `
 const BtnNumber = styled.span`
 align-items: center;
@@ -108,7 +106,7 @@ align-items: center;
     color: #ff7d19;
     cursor: pointer;
     display: inline-flex;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin: 30px;
     

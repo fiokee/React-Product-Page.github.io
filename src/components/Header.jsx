@@ -3,7 +3,9 @@ import styled from "styled-components";
 import {Link} from "react-router-dom"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Avatar from '@mui/material/Avatar';
-
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import {mobile,tablet,lapTop} from '../Responsive'
 
 const Container = styled.header`
    box-shadow: 2px 5px #f0eaea;
@@ -17,13 +19,31 @@ const Container = styled.header`
    top:0;
     `
 const Nav = styled.nav`
-   justify-content: space-around; 
+   ${tablet({
+    position:"absolute",
+    width:"80%",
+    height:"80vh",
+    backgroundColor:"#fff",
+    top: "6rem",
+    transition:"all .4s ease-in-out",
+    zIndex:"1000"
+   })}
 `
-const Logo = styled.div`
+const Logo = styled.h1`
     font-size: 30px;
     font-weight: 500;
     color:#000;
-    font-size: 30px;
+    ${tablet({
+        fontSize:'40px',
+        fontWeight: 'bolder',
+        color:'#000',
+        width: '100vh',
+        margin: '20px'
+        
+    })}
+    ${lapTop({
+        fontSize: '16px',
+    })}
     `
     const NavItem = styled.ul`
     display: flex;
@@ -31,20 +51,27 @@ const Logo = styled.div`
     list-style: none;
     width: 40%;
     font-size: 17px;
-    justify-content: space-around;
+    justify-content: space-between;
+    ${tablet({
+        marginTop:"30px",
+        flexDirection:"column",
+       textAlign:'justify'
+    })}
     `
     const NavList = styled.li`
     margin: 0 20px;
     font-size: 20px;
     font-weight: 400;
-    &:hover{
-     padding-bottom:20px ;
-     border-bottom: 5px solid hsl(26, 100%, 55%);
-   }
     `
     const CartContainerIcon =styled.div`
     display: flex;
     position:relative;
+    `
+    const CartIcon = styled.img`
+        color: #fff;
+        outline-color: #000;
+        width: 100%;
+        height: auto;
     `
     const AvtarImg = styled.div`
      display: flex;
@@ -62,10 +89,22 @@ const Logo = styled.div`
    right: 7px;
    font-weight: 700;
    `
+   const Hamburger= styled.div`
+   flex-direction: column;
+   border: 1px solid #ccc;
+   width: 40px;
+   cursor:pointer;
+   display: none;
+   ${tablet({display:'flex'})}
+`
     const Header = ()=>{
+    const [mobileNav,setMobileNav] = React.useState(false)
     return <Container>
+        <Hamburger onClick={()=>(setMobileNav(!mobileNav))}>
+        { mobileNav ? <> <CloseIcon style={{fontSize:'30px'}}/></>  : <><MenuIcon style={{fontSize:'40px'}}/></>}
+        </Hamburger>
         <Logo>Sneakers</Logo>
-        <Nav>
+        <Nav style={{left:mobileNav ? '0' :"100%"}}>
 
         <NavItem>
             <NavList>
@@ -86,7 +125,8 @@ const Logo = styled.div`
             </NavItem>
         </Nav>
             <CartContainerIcon>
-                <ShoppingCartIcon  style={{fontSize: '30px'}}/>
+                <CartIcon src="./images/icon-cart.svg" ></CartIcon>
+                {/* <ShoppingCartIcon  style={{fontSize: '30px'}}/> */}
                 <Cart>3</Cart>
             <AvtarImg>
                 <Avatar src="../images/image-avatar.png"/>
